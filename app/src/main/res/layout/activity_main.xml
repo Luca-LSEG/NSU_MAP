@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    tools:ignore="ExtraText">
+
+
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/map_fragment"
+        android:layout_marginBottom="80dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:name="com.naver.maps.map.MapFragment"
+        app:navermap_latitude="36.909203"
+        app:navermap_longitude="127.144396"
+        app:navermap_zoom="16"
+        tools:layout="@layout/activity_main" />
+
+    <!-- 검색창 구현 -->
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/search_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:iconifiedByDefault="false"
+        android:background="@color/white"
+        app:queryHint="장소, 건물 이름, 과목 검색" />
+
+    <include layout="@layout/bottom_sheet" />
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+
