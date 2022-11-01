@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         app:iconifiedByDefault="false"
         android:background="@color/white"
-        app:queryHint="장소, 과목 검색" />
+        app:queryHint="장소, 건물 이름, 과목 검색" />
 
     <include layout="@layout/bottom_sheet" />
 
