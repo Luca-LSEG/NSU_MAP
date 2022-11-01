@@ -1,6 +1,12 @@
 package com.nsu_map;
 
+import android.content.Intent;
+import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.UiThread;
@@ -17,6 +23,8 @@ import com.naver.maps.map.UiSettings;
 import com.naver.maps.map.overlay.Marker;
 import com.naver.maps.map.util.FusedLocationSource;
 
+import java.io.IOException;
+
 
 // 네이버 map 객체 가져오기
 public class MainActivity extends FragmentActivity
@@ -29,7 +37,7 @@ public class MainActivity extends FragmentActivity
     private MapView mapView;
 
 
-
+    Button mbtn_url;
 
 
     @Override
@@ -38,22 +46,28 @@ public class MainActivity extends FragmentActivity
         setContentView(R.layout.activity_main);
 
         locationSource =
-                new FusedLocationSource(this,LOCATION_PERMiSION_REQUEST_CODE);
+                new FusedLocationSource(this, LOCATION_PERMiSION_REQUEST_CODE);
 
         //지도 객체 생성
         FragmentManager fm = getSupportFragmentManager();
         MapFragment mapFragment = (MapFragment) fm.findFragmentById(R.id.map_fragment);
         if (mapFragment == null) {
-             mapFragment = MapFragment.newInstance();
+            mapFragment = MapFragment.newInstance();
             fm.beginTransaction().add(R.id.map_fragment, mapFragment).commit();
         }
         mapFragment.getMapAsync(this);
 
+        //채움 메뉴 홈페이지 이동
+        mbtn_url = findViewById((R.id.btn_url));
 
-
-
+        mbtn_url.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent urlintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://nsu.ac.kr/?m1=page%25&menu_id=485%25"));
+                startActivity(urlintent);
+            }
+        });
     }
-
 
 
     @UiThread
