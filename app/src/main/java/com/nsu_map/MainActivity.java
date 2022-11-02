@@ -10,8 +10,11 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.UiThread;
+import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.naver.maps.geometry.LatLng;
 import com.naver.maps.map.LocationTrackingMode;
@@ -24,6 +27,8 @@ import com.naver.maps.map.overlay.Marker;
 import com.naver.maps.map.util.FusedLocationSource;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Locale;
 
 
 // 네이버 map 객체 가져오기
@@ -36,14 +41,17 @@ public class MainActivity extends FragmentActivity
     private NaverMap naverMap;
     private MapView mapView;
 
-
+    // 채움 이동 버튼
     Button mbtn_url;
+
+
 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         locationSource =
                 new FusedLocationSource(this, LOCATION_PERMiSION_REQUEST_CODE);
@@ -67,7 +75,21 @@ public class MainActivity extends FragmentActivity
                 startActivity(urlintent);
             }
         });
+
+        //채움 메뉴 홈페이지 이동 버튼
+        mbtn_url = findViewById((R.id.btn_url2));
+
+        mbtn_url.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent urlintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://nsu.ac.kr/?m1=page%25&menu_id=485%25"));
+                startActivity(urlintent);
+            }
+        });
     }
+
+
+
 
 
     @UiThread
@@ -87,7 +109,6 @@ public class MainActivity extends FragmentActivity
 
         // UI 설정(제스처)
         UiSettings uiSettings = naverMap.getUiSettings();
-
         uiSettings.setZoomGesturesEnabled(true);      // 줌 활성화
         uiSettings.setLocationButtonEnabled(true);
         uiSettings.setIndoorLevelPickerEnabled(true);
