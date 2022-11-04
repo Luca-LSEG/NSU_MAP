@@ -37,17 +37,6 @@
         android:elevation="10dp"
         app:queryHint="장소, 건물 이름, 과목 검색" />
 
-    <!--줌버튼 더하기 -->
-    <Button
-        android:id="@+id/bus"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="300dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginRight="10dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="350dp"/>
 
 
 

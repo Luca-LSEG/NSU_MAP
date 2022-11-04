@@ -91,14 +91,6 @@ public class MainActivity extends FragmentActivity
         });
 
 
-        /****  테스트 시트 버튼 ****/
-        bussheet = findViewById(R.id.bus);
-        bussheet.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showDialog();
-            }
-        });
 
 
     }
