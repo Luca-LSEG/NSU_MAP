@@ -103,7 +103,7 @@ public class MainActivity extends FragmentActivity
 
     }
 
-    /**** 버스 시간표 시드 시간표 애니메이션 ****/
+    /**** 버스 시간표 시트 시간표 애니메이션 ****/
     private void showDialog() {
         final Dialog dialog = new Dialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -125,6 +125,39 @@ public class MainActivity extends FragmentActivity
             @Override
             public void onClick(View v) {
                 Intent urlintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://nsu.ac.kr/?m1=page%25&menu_id=59%25"));
+                startActivity(urlintent);
+            }
+        });
+
+        dialog.show();
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+        dialog.getWindow().setGravity((Gravity.BOTTOM));
+    }
+
+    /** 채움 식당 시트 애니메이션 **/
+    private void showfill() {
+        final Dialog dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.fill_sheet);
+
+
+        Button fill = dialog.findViewById(R.id.fill_btn);
+        Button fill2 = dialog.findViewById(R.id.fill_btn2);
+
+        fill.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent urlintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://nsu.ac.kr/?m1=page%25&menu_id=485%25"));
+                startActivity(urlintent);
+            }
+        });
+
+        fill2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent urlintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://nsu.ac.kr/?m1=page%25&menu_id=485%25"));
                 startActivity(urlintent);
             }
         });
@@ -164,6 +197,13 @@ public class MainActivity extends FragmentActivity
         marker2.setCaptionText("채움");
         marker2.setPosition(new LatLng(36.909119, 127.147374));
         marker2.setMap(naverMap);
+        marker2.setOnClickListener(new Overlay.OnClickListener() {
+            @Override
+            public boolean onClick(@NonNull Overlay overlay) {
+                showfill();
+                return false;
+            }
+        });
 
 
         /**** 네이버 지도 UI 설정 ****/
