@@ -187,7 +187,7 @@ public class MainActivity extends FragmentActivity
         /**** 채움 마커 ****/
         Marker marker2 = new Marker();
         marker2.setCaptionText("채움");
-        marker2.setPosition(new LatLng(36.909119, 127.147374));
+        marker2.setPosition(new LatLng(36.908934, 127.146289));
         marker2.setMap(naverMap);
         marker2.setOnClickListener(new Overlay.OnClickListener() {
             @Override
