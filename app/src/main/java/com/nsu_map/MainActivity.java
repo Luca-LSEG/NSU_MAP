@@ -7,11 +7,13 @@ import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -45,8 +47,7 @@ public class MainActivity extends FragmentActivity
     /**** 메인 버튼 이동 버튼 ****/
     Button mbtn_url;
 
-    /****** 버스 시트 보여주기 *****/
-    Button bussheet;
+    ScrollView fill;
 
 
     @Override
@@ -137,6 +138,14 @@ public class MainActivity extends FragmentActivity
 
         Button fill = dialog.findViewById(R.id.fill_btn);
         Button fill2 = dialog.findViewById(R.id.fill_btn2);
+        Button fill3 = dialog.findViewById(R.id.li1);
+        Button fill4 = dialog.findViewById(R.id.li2);
+        Button fill5 = dialog.findViewById(R.id.li3);
+
+        /** 버튼 스크롤 이동 **/
+        ScrollView fiscrol = dialog.findViewById(R.id.fima);
+
+
 
         fill.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -151,8 +160,38 @@ public class MainActivity extends FragmentActivity
             public void onClick(View v) {
                 Intent urlintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://nsu.ac.kr/?m1=page%25&menu_id=485%25"));
                 startActivity(urlintent);
+
             }
         });
+
+        /** 음식 이동 버튼 **/
+        fill3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fiscrol.smoothScrollTo(0,1480);
+
+            }
+        });
+
+        /** 음료 이동 버튼 **/
+        fill4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fiscrol.smoothScrollTo(0,1480);
+
+            }
+        });
+
+        /** 화장실 이동 버튼 **/
+        fill5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fiscrol.smoothScrollTo(0,1600);
+
+            }
+        });
+
+
 
         dialog.show();
         dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -168,7 +207,15 @@ public class MainActivity extends FragmentActivity
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.library_sheet);
 
+        Button libraryb = dialog.findViewById(R.id.library_btn);
 
+        libraryb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent urlintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=FbBCbuwcNIM&t=232s"));
+                startActivity(urlintent);
+            }
+        });
 
         dialog.show();
         dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);

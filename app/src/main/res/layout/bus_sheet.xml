@@ -61,10 +61,10 @@
     <TextView
         android:id="@+id/rdd1"
         android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:text="\n🚌 버스 시간표 "
         android:textColor="@color/black"
-        android:textSize="17dp"
+        android:textSize="18dp"
         android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="105dp"
