@@ -161,7 +161,21 @@ public class MainActivity extends FragmentActivity
         dialog.getWindow().setGravity((Gravity.BOTTOM));
     }
 
+    /** 성암 도서실 애니메이션 **/
 
+    private void showlibary() {
+        final Dialog dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.library_sheet);
+
+
+
+        dialog.show();
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+        dialog.getWindow().setGravity((Gravity.BOTTOM));
+    }
 
     @UiThread
     @Override
@@ -193,6 +207,19 @@ public class MainActivity extends FragmentActivity
             @Override
             public boolean onClick(@NonNull Overlay overlay) {
                 showfill();
+                return false;
+            }
+        });
+
+        /**** 성암 도서실 마커 *****/
+        Marker marker3 = new Marker();
+        marker3.setCaptionText("성암 도서관");
+        marker3.setPosition(new LatLng(36.908978, 127.143346));
+        marker3.setMap(naverMap);
+        marker3.setOnClickListener(new Overlay.OnClickListener() {
+            @Override
+            public boolean onClick(@NonNull Overlay overlay) {
+                showlibary();
                 return false;
             }
         });
