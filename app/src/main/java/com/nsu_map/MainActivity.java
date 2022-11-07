@@ -18,6 +18,7 @@ import androidx.annotation.UiThread;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 
+import com.denzcoskun.imageslider.models.SlideModel;
 import com.naver.maps.geometry.LatLng;
 import com.naver.maps.map.LocationTrackingMode;
 import com.naver.maps.map.MapFragment;
@@ -28,6 +29,8 @@ import com.naver.maps.map.UiSettings;
 import com.naver.maps.map.overlay.Marker;
 import com.naver.maps.map.overlay.Overlay;
 import com.naver.maps.map.util.FusedLocationSource;
+
+import java.util.ArrayList;
 
 
 /**** 네이버 객체 api 가져오기 ****/
@@ -46,15 +49,22 @@ public class MainActivity extends FragmentActivity
     ScrollView fill;
 
 
+
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
 
+
         locationSource =
                 new FusedLocationSource(this, LOCATION_PERMiSION_REQUEST_CODE);
 
+
+        ArrayList<SlideModel> imageList = new ArrayList<>();
+        
 
         /** 지도 객체 생성 **/
         FragmentManager fm = getSupportFragmentManager();
@@ -138,6 +148,7 @@ public class MainActivity extends FragmentActivity
         Button fill4 = dialog.findViewById(R.id.li2);
         Button fill5 = dialog.findViewById(R.id.li3);
 
+
         /** 버튼 스크롤 이동 **/
         ScrollView fiscrol = dialog.findViewById(R.id.fima);
 
@@ -203,7 +214,9 @@ public class MainActivity extends FragmentActivity
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.library_sheet);
 
+
         Button libraryb = dialog.findViewById(R.id.library_btn);
+
 
         libraryb.setOnClickListener(new View.OnClickListener() {
             @Override

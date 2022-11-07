@@ -2,6 +2,7 @@ pluginManagement {
     repositories {
         gradlePluginPortal()
         google()
+
         mavenCentral()
     }
 }
@@ -12,6 +13,9 @@ dependencyResolutionManagement {
         maven {
             url 'https://naver.jfrog.io/artifactory/maven/'
         }   // 저장소 설정
+        maven{
+            url 'https//jitpack.io'
+        }
     }
 }
 rootProject.name = "NSU_MAP"
