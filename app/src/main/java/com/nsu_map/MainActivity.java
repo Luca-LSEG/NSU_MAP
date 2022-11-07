@@ -142,7 +142,7 @@ public class MainActivity extends FragmentActivity
         ScrollView fiscrol = dialog.findViewById(R.id.fima);
 
 
-
+        /**채움 유튜브 이동 버튼 **/
         fill.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -220,6 +220,22 @@ public class MainActivity extends FragmentActivity
         dialog.getWindow().setGravity((Gravity.BOTTOM));
     }
 
+
+    /** 학복관 애니메이션 **/
+
+    private void showwelfare() {
+        final Dialog dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.welfare_sheet);
+
+
+        dialog.show();
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+        dialog.getWindow().setGravity((Gravity.BOTTOM));
+    }
+
     @UiThread
     @Override
     public void onMapReady(@NonNull NaverMap naverMap) {
@@ -276,7 +292,7 @@ public class MainActivity extends FragmentActivity
         marker4.setOnClickListener(new Overlay.OnClickListener() {
             @Override
             public boolean onClick(@NonNull Overlay overlay) {
-                showlibary();
+                showwelfare();
                 return false;
             }
         });
