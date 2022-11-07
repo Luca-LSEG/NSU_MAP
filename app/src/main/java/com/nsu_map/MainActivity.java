@@ -7,14 +7,11 @@ import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.Gravity;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.ScrollView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.UiThread;
@@ -22,7 +19,6 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 
 import com.naver.maps.geometry.LatLng;
-import com.naver.maps.map.CameraUpdate;
 import com.naver.maps.map.LocationTrackingMode;
 import com.naver.maps.map.MapFragment;
 import com.naver.maps.map.MapView;
@@ -96,7 +92,7 @@ public class MainActivity extends FragmentActivity
 
     }
 
-    /**** 버스 시간표 시트 시간표 애니메이션 ****/
+    /**** 버스 시간표 시트 애니메이션 ****/
     private void showDialog() {
         final Dialog dialog = new Dialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);

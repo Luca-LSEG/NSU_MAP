@@ -4,4 +4,5 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="button">Button</string>
     <string name="button1">Button</string>
+    <string name="open_am_07_00_pm_23_00">Open AM 07:00 ~ PM 23:00</string>
 </resources>
