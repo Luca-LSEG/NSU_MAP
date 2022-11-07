@@ -258,7 +258,7 @@
                 android:layout_height="50dp"
                 android:layout_marginLeft="14dp"
                 android:textColor="@color/white"
-                android:text="자세히 보기"
+                android:text="@string/wktpgl"
                 android:background="@drawable/round_button"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -270,14 +270,14 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="\n📖 열람실"
+                android:text="@string/n"
                 android:textColor="@color/black"
                 android:textSize="17dp"
                 android:textStyle="bold"
                 app:layout_constraintTop_toTopOf="parent"
                 android:layout_marginTop="20dp"
                 app:layout_constraintLeft_toLeftOf="parent"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 app:layout_constraintTop_toBottomOf="@id/lineView3"
                 />
             <TextView
@@ -289,7 +289,7 @@
                 app:layout_constraintTop_toTopOf="@id/rdd3"
                 android:layout_marginTop="0dp"
                 app:layout_constraintLeft_toLeftOf="parent"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 app:layout_constraintTop_toBottomOf="@id/lineView3"
                  />
 

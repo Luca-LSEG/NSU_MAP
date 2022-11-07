@@ -257,9 +257,49 @@ public class MainActivity extends FragmentActivity
         /**** 성암 도서실 마커 *****/
         Marker marker3 = new Marker();
         marker3.setCaptionText("성암 도서관");
-        marker3.setPosition(new LatLng(36.908978, 127.143346));
+        marker3.setPosition(new LatLng(36.909000, 127.143511));
         marker3.setMap(naverMap);
         marker3.setOnClickListener(new Overlay.OnClickListener() {
+            @Override
+            public boolean onClick(@NonNull Overlay overlay) {
+                showlibary();
+                return false;
+            }
+        });
+
+
+        /**** 학복관 마커 *****/
+        Marker marker4 = new Marker();
+        marker4.setCaptionText("학생 복지회관(학복관)");
+        marker4.setPosition(new LatLng(36.909793, 127.143565));
+        marker4.setMap(naverMap);
+        marker4.setOnClickListener(new Overlay.OnClickListener() {
+            @Override
+            public boolean onClick(@NonNull Overlay overlay) {
+                showlibary();
+                return false;
+            }
+        });
+
+        /**** 공학 1관 *****/
+        Marker marker5 = new Marker();
+        marker5.setCaptionText("공학 1관");
+        marker5.setPosition(new LatLng(36.907303, 127.143542));
+        marker5.setMap(naverMap);
+        marker5.setOnClickListener(new Overlay.OnClickListener() {
+            @Override
+            public boolean onClick(@NonNull Overlay overlay) {
+                showlibary();
+                return false;
+            }
+        });
+
+        /**** 공학 2관 *****/
+        Marker marker6 = new Marker();
+        marker6.setCaptionText("공학 2관");
+        marker6.setPosition(new LatLng(36.907165, 127.142635));
+        marker6.setMap(naverMap);
+        marker6.setOnClickListener(new Overlay.OnClickListener() {
             @Override
             public boolean onClick(@NonNull Overlay overlay) {
                 showlibary();
