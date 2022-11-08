@@ -8,6 +8,7 @@
     tools:ignore="ExtraText">
 
 
+
     <!---네이버 지도 -->
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/map_fragment"
