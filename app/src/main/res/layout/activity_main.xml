@@ -8,7 +8,6 @@
     tools:ignore="ExtraText">
 
 
-
     <!---네이버 지도 -->
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/map_fragment"
@@ -45,11 +44,11 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintBaseline_toBottomOf="parent"
-            android:elevation="5dp"
-            android:layout_marginBottom="320dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="333dp"
-            android:layout_marginLeft="359dp"
+            android:elevation="3dp"
+            android:layout_marginBottom="412dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginTop="330dp"
+            android:layout_marginLeft="358dp"
             android:background="@drawable/pl"/>
 
 
