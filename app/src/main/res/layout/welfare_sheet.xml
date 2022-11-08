@@ -23,16 +23,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-    <!-- 스크롤 바 -->
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        tools:ignore="MissingConstraints">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
 
             <!--제목-->
             <TextView
@@ -57,7 +47,7 @@
                 android:layout_height="match_parent"
                 android:text="식당, 커피숍등 다양한 편의시설 제공"
                 app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginTop="-30dp"
+                android:layout_marginTop="75dp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 android:layout_marginLeft="10dp"/>
 
@@ -70,9 +60,22 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="100dp"
                 app:layout_constraintTop_toBottomOf="@id/bottomSheetTitleTextView3" />
 
+
+    <!-- 스크롤 바 -->
+    <ScrollView
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="100dp"
+        android:layout_height="match_parent"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <!-- 시설 기본 정보 -->
             <TextView
