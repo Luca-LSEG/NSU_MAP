@@ -332,6 +332,142 @@ public class MainActivity extends FragmentActivity
         dialog.setContentView(R.layout.welfare_sheet);
 
 
+        Button welb = dialog.findViewById(R.id.welfare_btn);
+
+        /** 1층식당 스크롤 이동 **/
+        ScrollView welscrol = dialog.findViewById(R.id.welfare_scrol);
+        Button welfbtn = dialog.findViewById(R.id.walfare_scroll_btn01);
+
+        /** 2층식당 스크롤 이동 **/
+        ScrollView welscrol02 = dialog.findViewById(R.id.welfare_scrol);
+        Button welfbtn02 = dialog.findViewById(R.id.walfare_scroll_btn02);
+
+        /** 편의점 스크롤 이동 **/
+        ScrollView welscrol03 = dialog.findViewById(R.id.welfare_scrol);
+        Button welfbtn03 = dialog.findViewById(R.id.walfare_scroll_btn03);
+
+        /** 카페 스크롤 이동 **/
+        ScrollView welscrol04 = dialog.findViewById(R.id.welfare_scrol);
+        Button welfbtn04 = dialog.findViewById(R.id.walfare_scroll_btn04);
+
+        /** 프린터실 스크롤 이동 **/
+        ScrollView welscrol05 = dialog.findViewById(R.id.welfare_scrol);
+        Button welfbtn05 = dialog.findViewById(R.id.walfare_scroll_btn05);
+
+        /** 서점 스크롤 이동 **/
+        ScrollView welscrol06 = dialog.findViewById(R.id.welfare_scrol);
+        Button welfbtn06 = dialog.findViewById(R.id.walfare_scroll_btn06);
+
+        /** 문구점 스크롤 이동 **/
+        ScrollView welscrol07 = dialog.findViewById(R.id.welfare_scrol);
+        Button welfbtn07 = dialog.findViewById(R.id.walfare_scroll_btn07);
+
+        /** 우체국 스크롤 이동 **/
+        ScrollView welscrol08 = dialog.findViewById(R.id.welfare_scrol);
+        Button welfbtn08 = dialog.findViewById(R.id.walfare_scroll_btn08);
+
+        /** 브레댄코 스크롤 이동 **/
+        ScrollView welscrol09 = dialog.findViewById(R.id.welfare_scrol);
+        Button welfbtn09 = dialog.findViewById(R.id.walfare_scroll_btn09);
+
+        /** 화장실 스크롤 이동 **/
+        ScrollView welscrol10 = dialog.findViewById(R.id.welfare_scrol);
+        Button welfbtn10 = dialog.findViewById(R.id.walfare_scroll_btn10);
+
+
+
+
+        welfbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                welscrol.smoothScrollTo(0,1250);
+
+            }
+        });
+
+        welfbtn02.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                welscrol02.smoothScrollTo(0,2000);
+
+            }
+        });
+
+        welfbtn03.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                welscrol03.smoothScrollTo(0,2800);
+
+            }
+        });
+
+        welfbtn04.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                welscrol04.smoothScrollTo(0,3650);
+
+            }
+        });
+
+        welfbtn05.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                welscrol05.smoothScrollTo(0,4500);
+
+            }
+        });
+
+        welfbtn06.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                welscrol06.smoothScrollTo(0,5350);
+
+            }
+        });
+
+        welfbtn07.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                welscrol07.smoothScrollTo(0,6200);
+
+            }
+        });
+
+        welfbtn08.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                welscrol08.smoothScrollTo(0,7050);
+
+            }
+        });
+
+        welfbtn09.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                welscrol09.smoothScrollTo(0,7900);
+
+            }
+        });
+
+        welfbtn10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                welscrol10.smoothScrollTo(0,8500);
+
+            }
+        });
+
+        welb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent urlintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=R5kK6FmuHak"));
+                startActivity(urlintent);
+            }
+        });
+
+
+
+
         dialog.show();
         dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));

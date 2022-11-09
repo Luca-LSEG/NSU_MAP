@@ -247,9 +247,9 @@
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/food1"
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:background="@drawable/f_food02"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_marginTop="20dp"
                         app:layout_constraintLeft_toLeftOf="parent"
@@ -258,9 +258,9 @@
                         android:layout_marginRight="10dp"/>
 
                     <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/food2"
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:background="@drawable/f_food01"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_marginTop="20dp"
                         app:layout_constraintLeft_toLeftOf="parent"
@@ -269,9 +269,9 @@
                         android:layout_marginRight="10dp"/>
 
                     <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/food3"
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:background="@drawable/f_food04"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_marginTop="20dp"
                         app:layout_constraintLeft_toLeftOf="parent"
@@ -280,9 +280,9 @@
                         android:layout_marginRight="10dp"/>
 
                     <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/food4"
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:background="@drawable/f_food03"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_marginTop="20dp"
                         app:layout_constraintLeft_toLeftOf="parent"
@@ -290,16 +290,7 @@
                         app:layout_constraintRight_toRightOf="parent"
                         android:layout_marginRight="10dp"/>
 
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/food5"
-                        app:layout_constraintTop_toTopOf="parent"
-                        android:layout_marginTop="20dp"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        android:layout_marginLeft="10dp"
-                        app:layout_constraintRight_toRightOf="parent"
-                        android:layout_marginRight="10dp"/>
+
                 </LinearLayout>
             </HorizontalScrollView>
 
@@ -331,9 +322,9 @@
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/drink1"
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:background="@drawable/f_food05"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_marginTop="20dp"
                         app:layout_constraintLeft_toLeftOf="parent"
@@ -342,9 +333,9 @@
                         android:layout_marginRight="10dp"/>
 
                     <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/drink2"
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:background="@drawable/f_food06"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_marginTop="20dp"
                         app:layout_constraintLeft_toLeftOf="parent"
@@ -353,9 +344,9 @@
                         android:layout_marginRight="10dp"/>
 
                     <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/drink3"
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:background="@drawable/f_food07"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_marginTop="20dp"
                         app:layout_constraintLeft_toLeftOf="parent"
@@ -364,9 +355,9 @@
                         android:layout_marginRight="10dp"/>
 
                     <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/drink4"
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:background="@drawable/f_food08"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_marginTop="20dp"
                         app:layout_constraintLeft_toLeftOf="parent"
@@ -374,16 +365,6 @@
                         app:layout_constraintRight_toRightOf="parent"
                         android:layout_marginRight="10dp"/>
 
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/drink5"
-                        app:layout_constraintTop_toTopOf="parent"
-                        android:layout_marginTop="20dp"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        android:layout_marginLeft="10dp"
-                        app:layout_constraintRight_toRightOf="parent"
-                        android:layout_marginRight="10dp"/>
 
 
                 </LinearLayout>
