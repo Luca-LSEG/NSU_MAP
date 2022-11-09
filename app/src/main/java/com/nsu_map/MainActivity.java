@@ -218,6 +218,96 @@ public class MainActivity extends FragmentActivity
         Button libraryb = dialog.findViewById(R.id.library_btn);
 
 
+        /** 열람실 스크롤 이동 **/
+        ScrollView libraryscrol = dialog.findViewById(R.id.libraryscrol);
+        Button bookbtn = dialog.findViewById(R.id.bookscroll1);
+
+        /** 자판기 스크롤 이동 **/
+        ScrollView libraryscrol2 = dialog.findViewById(R.id.libraryscrol);
+        Button bookbtn2 = dialog.findViewById(R.id.bookscroll2);
+
+        /** 화장실 스크롤 이동 **/
+        ScrollView libraryscrol3 = dialog.findViewById(R.id.libraryscrol);
+        Button bookbtn3 = dialog.findViewById(R.id.bookscroll3);
+
+        /** 카페 스크롤 이동 **/
+        ScrollView libraryscrol4 = dialog.findViewById(R.id.libraryscrol);
+        Button bookbtn4 = dialog.findViewById(R.id.bookscroll4);
+
+        /** 도서 대출실 스크롤 이동 **/
+        ScrollView libraryscrol5 = dialog.findViewById(R.id.libraryscrol);
+        Button bookbtn5 = dialog.findViewById(R.id.bookscroll5);
+
+        /** 자료실 스크롤 이동 **/
+        ScrollView libraryscrol6 = dialog.findViewById(R.id.libraryscrol);
+        Button bookbtn6 = dialog.findViewById(R.id.bookscroll6);
+
+        /** 자료실 스크롤 이동 **/
+        ScrollView libraryscrol7 = dialog.findViewById(R.id.libraryscrol);
+        Button bookbtn7 = dialog.findViewById(R.id.bookscroll7);
+
+
+
+
+        bookbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                libraryscrol.smoothScrollTo(0,1270);
+
+            }
+        });
+
+        bookbtn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                libraryscrol2.smoothScrollTo(0,2800);
+
+            }
+        });
+
+        bookbtn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                libraryscrol3.smoothScrollTo(0,3700);
+
+            }
+        });
+
+        bookbtn4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                libraryscrol4.smoothScrollTo(0,4500);
+
+            }
+        });
+
+        bookbtn5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                libraryscrol5.smoothScrollTo(0,5900);
+
+            }
+        });
+
+        bookbtn6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                libraryscrol6.smoothScrollTo(0,7400);
+
+            }
+        });
+
+
+        bookbtn7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                libraryscrol7.smoothScrollTo(0,7900);
+
+            }
+        });
+
+
+
         libraryb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
