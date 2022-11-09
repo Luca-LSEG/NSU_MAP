@@ -175,7 +175,7 @@ public class MainActivity extends FragmentActivity
         fill3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                fiscrol.smoothScrollTo(0,1480);
+                fiscrol.smoothScrollTo(0,1180);
 
             }
         });
@@ -184,7 +184,7 @@ public class MainActivity extends FragmentActivity
         fill4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                fiscrol.smoothScrollTo(0,1480);
+                fiscrol.smoothScrollTo(0,1800);
 
             }
         });
@@ -193,7 +193,7 @@ public class MainActivity extends FragmentActivity
         fill5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                fiscrol.smoothScrollTo(0,1600);
+                fiscrol.smoothScrollTo(0,1800);
 
             }
         });
