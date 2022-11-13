@@ -475,6 +475,62 @@ public class MainActivity extends FragmentActivity
         dialog.getWindow().setGravity((Gravity.BOTTOM));
     }
 
+
+    /**** 공학1관 시트 애니메이션 ****/
+    private void showengineering1() {
+        final Dialog dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.engineering1_sheet);
+
+        Button L205 = dialog.findViewById(R.id.l205_btn);
+
+        L205.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showL205();
+            }
+        });
+
+
+
+        dialog.show();
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+        dialog.getWindow().setGravity((Gravity.BOTTOM));
+    }
+
+
+    /**** L205 시트 애니메이션 ****/
+    private void showL205() {
+        final Dialog dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.l205);
+
+
+        dialog.show();
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+        dialog.getWindow().setGravity((Gravity.BOTTOM));
+    }
+
+    /**** 공학2관 시트 애니메이션 ****/
+    private void showengineering2() {
+        final Dialog dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.engineering2_sheet);
+
+
+        dialog.show();
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+        dialog.getWindow().setGravity((Gravity.BOTTOM));
+    }
+
+
+
     @UiThread
     @Override
     public void onMapReady(@NonNull NaverMap naverMap) {
@@ -544,7 +600,7 @@ public class MainActivity extends FragmentActivity
         marker5.setOnClickListener(new Overlay.OnClickListener() {
             @Override
             public boolean onClick(@NonNull Overlay overlay) {
-                showlibary();
+                showengineering1();
                 return false;
             }
         });
@@ -557,7 +613,7 @@ public class MainActivity extends FragmentActivity
         marker6.setOnClickListener(new Overlay.OnClickListener() {
             @Override
             public boolean onClick(@NonNull Overlay overlay) {
-                showlibary();
+                showengineering2();
                 return false;
             }
         });

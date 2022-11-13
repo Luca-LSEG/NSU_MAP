@@ -9,48 +9,48 @@
     android:focusable="true"
     app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
-
     <!-- 표시선 -->
     <View
-        android:id="@+id/view3"
         android:layout_width="30dp"
         android:layout_height="3dp"
         android:layout_marginTop="12dp"
         android:background="#171616"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" >
 
-            <!--제목-->
-            <TextView
-                android:id="@+id/bottomSheetTitleTextView3"
-                android:layout_width="wrap_content"
-                android:layout_height="100dp"
-                android:gravity="center"
-                android:text="공학 1관"
-                android:textColor="@color/black"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginTop="8dp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                android:layout_marginLeft="10dp"
-                />
+    </View>
 
 
-            <!-- 부제목 -->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="식당, 커피숍등 다양한 편의시설 제공"
-                app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginTop="-30dp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                android:layout_marginLeft="10dp"/>
+
+    <!--제목-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:text="공학 1관"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="10dp"
+        />
+
+
+    <!-- 부제목 -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="남서울대 공대생의 배움터"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="75dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="10dp"/>
 
     <!--구분선-->
     <View
-        android:id="@+id/lineView3"
         android:layout_width="wrap_content"
         android:layout_height="1dp"
         android:background="#cccccc"
@@ -58,11 +58,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="100dp"
-        app:layout_constraintTop_toBottomOf="@id/bottomSheetTitleTextView3" />
+ />
+
 
 
     <!-- 스크롤 바 -->
     <ScrollView
+        android:id="@id/fima"
         android:layout_width="match_parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="100dp"
@@ -72,6 +74,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
             android:orientation="vertical">
 
 
@@ -80,8 +83,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
-                android:background="@color/teal_200"
-                android:text="🧐학복관에는 이런 편의 시설이 있어요"
+                android:background="@drawable/gradient"
+                android:text=" 🧐공학 1관에는 이런 편의 시설이 있어요"
                 android:textSize="17dp"
                 android:textStyle="bold"
                 app:layout_constraintTop_toTopOf="parent"
@@ -95,20 +98,57 @@
 
             <HorizontalScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:scrollbarSize="0dp"
+                >
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="40dp">
+
+
                     <Button
-                        android:id="@+id/li1"
+                        android:id="@+id/engin1_1"
+                        android:layout_width="90dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="7dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/round_button_white"
+                        android:text="📖 강의실"
+                        android:textColor="@color/black"
+                        android:textSize="17dp"
+                        android:textStyle="bold"
+                        app:layout_constraintLeft_toLeftOf="@id/li1"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/li1" />
+
+                    <Button
+                        android:id="@+id/engin1_2"
+                        android:layout_width="135dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="7dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/round_button_white"
+                        android:text="🧑‍🏫 교수님 연구실"
+                        android:textColor="@color/black"
+                        android:textSize="17dp"
+                        android:textStyle="bold"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/li1" />
+
+
+                    <Button
+                        android:id="@+id/engin1_3"
                         android:layout_width="90dp"
                         android:layout_height="30dp"
                         android:textColor="@color/black"
                         android:background="@drawable/round_button_white"
                         android:textStyle="bold"
                         android:textSize="17dp"
-                        android:text="1층 식당"
+                        android:text="💰 ATM"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_marginTop="5dp"
                         app:layout_constraintRight_toRightOf="parent"
@@ -116,143 +156,371 @@
                         app:layout_constraintLeft_toLeftOf="parent"
                         android:layout_marginLeft="10dp"/>
 
-                    <Button
-                        android:layout_width="105dp"
-                        android:layout_height="30dp"
-                        android:layout_marginLeft="7dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginRight="10dp"
-                        android:background="@drawable/round_button_white"
-                        android:text="2층 식당"
-                        android:textColor="@color/black"
-                        android:textSize="17dp"
-                        android:textStyle="bold"
-                        app:layout_constraintLeft_toLeftOf="@id/li1"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toTopOf="@id/li1" />
 
                     <Button
+                        android:id="@+id/engin1_4"
                         android:layout_width="90dp"
                         android:layout_height="30dp"
-                        android:layout_marginLeft="7dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginRight="10dp"
-                        android:background="@drawable/round_button_white"
-                        android:text="🥤 편의점"
                         android:textColor="@color/black"
-                        android:textSize="17dp"
-                        android:textStyle="bold"
-                        app:layout_constraintLeft_toLeftOf="@id/li1"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toTopOf="@id/li1" />
-
-                    <Button
-                        android:layout_width="90dp"
-                        android:layout_height="30dp"
-                        android:layout_marginLeft="7dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginRight="10dp"
                         android:background="@drawable/round_button_white"
+                        android:textStyle="bold"
+                        android:textSize="17dp"
                         android:text="🧻 화장실"
-                        android:textColor="@color/black"
-                        android:textSize="17dp"
-                        android:textStyle="bold"
-                        app:layout_constraintLeft_toLeftOf="@id/li1"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toTopOf="@id/li1" />
-
-                    <Button
-                        android:layout_width="90dp"
-                        android:layout_height="30dp"
-                        android:layout_marginLeft="7dp"
+                        app:layout_constraintTop_toTopOf="parent"
                         android:layout_marginTop="5dp"
-                        android:layout_marginRight="10dp"
-                        android:background="@drawable/round_button_white"
-                        android:text="☕ 카페"
-                        android:textColor="@color/black"
-                        android:textSize="17dp"
-                        android:textStyle="bold"
-                        app:layout_constraintLeft_toLeftOf="@id/li1"
                         app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toTopOf="@id/li1" />
-
-                    <Button
-                        android:layout_width="140dp"
-                        android:layout_height="30dp"
-                        android:layout_marginLeft="7dp"
-                        android:layout_marginTop="5dp"
                         android:layout_marginRight="10dp"
-                        android:background="@drawable/round_button_white"
-                        android:text="프린터실"
-                        android:textColor="@color/black"
-                        android:textSize="17dp"
-                        android:textStyle="bold"
-                        app:layout_constraintLeft_toLeftOf="@id/li1"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toTopOf="@id/li1" />
-
-                    <Button
-                        android:layout_width="90dp"
-                        android:layout_height="30dp"
-                        android:layout_marginLeft="7dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginRight="10dp"
-                        android:background="@drawable/round_button_white"
-                        android:text="📕 서점"
-                        android:textColor="@color/black"
-                        android:textSize="17dp"
-                        android:textStyle="bold"
-                        app:layout_constraintLeft_toLeftOf="@id/li1"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toTopOf="@id/li1" />
-
-                    <Button
-                        android:layout_width="105dp"
-                        android:layout_height="30dp"
-                        android:layout_marginLeft="7dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginRight="10dp"
-                        android:background="@drawable/round_button_white"
-                        android:text="문구점"
-                        android:textColor="@color/black"
-                        android:textSize="17dp"
-                        android:textStyle="bold"
-                        app:layout_constraintLeft_toLeftOf="@id/li1"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toTopOf="@id/li1" />
-                    <Button
-                        android:layout_width="105dp"
-                        android:layout_height="30dp"
-                        android:layout_marginLeft="7dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginRight="10dp"
-                        android:background="@drawable/round_button_white"
-                        android:text="우체국"
-                        android:textColor="@color/black"
-                        android:textSize="17dp"
-                        android:textStyle="bold"
-                        app:layout_constraintLeft_toLeftOf="@id/li1"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toTopOf="@id/li1" />
-
-                    <Button
-                        android:layout_width="105dp"
-                        android:layout_height="30dp"
-                        android:layout_marginLeft="7dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginRight="10dp"
-                        android:background="@drawable/round_button_white"
-                        android:text="브레덴코"
-                        android:textColor="@color/black"
-                        android:textSize="17dp"
-                        android:textStyle="bold"
-                        app:layout_constraintLeft_toLeftOf="@id/li1"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toTopOf="@id/li1" />
-
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:layout_marginLeft="10dp"/>
 
                 </LinearLayout>
             </HorizontalScrollView>
+
+            <!-- 내용1 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\n🔽 공학 1관 소개 "
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="20dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="10dp"
+                app:layout_constraintTop_toBottomOf="@id/lineView2"
+                />
+
+            <!-- 공학관 소개 사진 -->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="20dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="10dp"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/eng_img"/>
+
+            <!-- 내용1 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\n📖 강의실"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="20dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="10dp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="L = 왼쪽 건물, 첫번째 숫자 = 층 수"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                app:layout_constraintTop_toTopOf="@id/rdd3"
+                android:layout_marginTop="0dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="10dp"
+                app:layout_constraintTop_toBottomOf="@id/lineView3"
+                />
+
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbarSize="0dp"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+
+                    <Button
+                        android:id="@+id/l205_btn"
+                        android:layout_width="80dp"
+                        android:layout_height="30dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_marginTop="5dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:layout_marginLeft="10dp"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:layout_marginRight="10dp"
+                        android:text="L205"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:background="@drawable/round_btn_grey"/>
+
+                    <Button
+                        android:layout_width="80dp"
+                        android:layout_height="30dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_marginTop="5dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:layout_marginLeft="10dp"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:layout_marginRight="10dp"
+                        android:text="L207"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:background="@drawable/round_btn_grey"/>
+
+                    <Button
+                        android:layout_width="80dp"
+                        android:layout_height="30dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_marginTop="5dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:layout_marginLeft="10dp"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:layout_marginRight="10dp"
+                        android:text="L209"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:background="@drawable/round_btn_grey"/>
+
+                    <Button
+                        android:layout_width="80dp"
+                        android:layout_height="30dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_marginTop="5dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:layout_marginLeft="10dp"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:layout_marginRight="10dp"
+                        android:text="L302"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:background="@drawable/round_btn_grey"/>
+
+                    <Button
+                        android:layout_width="80dp"
+                        android:layout_height="30dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_marginTop="5dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:layout_marginLeft="10dp"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:layout_marginRight="10dp"
+                        android:text="L303"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:background="@drawable/round_btn_grey"/>
+
+                    <Button
+                        android:layout_width="80dp"
+                        android:layout_height="30dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_marginTop="5dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:layout_marginLeft="10dp"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:layout_marginRight="10dp"
+                        android:text="L305-1"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:background="@drawable/round_btn_grey"/>
+
+                    <Button
+                        android:layout_width="80dp"
+                        android:layout_height="30dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_marginTop="5dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:layout_marginLeft="10dp"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:layout_marginRight="10dp"
+                        android:text="L305-2"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:background="@drawable/round_btn_grey"/>
+
+                    <Button
+                        android:layout_width="80dp"
+                        android:layout_height="30dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_marginTop="5dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:layout_marginLeft="10dp"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:layout_marginRight="10dp"
+                        android:text="L310"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:background="@drawable/round_btn_grey"/>
+
+                    <Button
+                        android:layout_width="80dp"
+                        android:layout_height="30dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_marginTop="5dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:layout_marginLeft="10dp"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:layout_marginRight="10dp"
+                        android:text="L505"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:background="@drawable/round_btn_grey"/>
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+
+            <!-- 내용1 -->
+            <TextView
+                android:id="@+id/rdd2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\n🧑‍🏫 교수님 연구실 "
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="20dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="10dp"
+                />
+
+
+
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbarSize="0dp"
+            >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <Button
+                android:id="@+id/thddmswl"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="5dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="10dp"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginRight="10dp"
+                android:text="송은지 교수님"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:background="@drawable/round_btn_grey"/>
+
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="5dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="10dp"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginRight="10dp"
+                android:text="황정희 교수님"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:background="@drawable/round_btn_grey"/>
+
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="5dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="10dp"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginRight="10dp"
+                android:text="강현선 교수님"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:background="@drawable/round_btn_grey"/>
+
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="5dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="10dp"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginRight="10dp"
+                android:text="김현철 교수님"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:background="@drawable/round_btn_grey"/>
+
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="5dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="10dp"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginRight="10dp"
+                android:text="나상엽 교수님"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:background="@drawable/round_btn_grey"/>
+
+
+        </LinearLayout>
+        </HorizontalScrollView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\n💰 ATM(국민)"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="20dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="10dp"
+                />
+
+
+            <!-- atm 지도 사진 -->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="20dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="10dp"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/eng_1f_atm"/>
+
+            <!-- 카페 층 안내 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="  🚩 ATM 위치 - 지하 1F "
+                android:background="@drawable/round_button_blue"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="@id/rdd3"
+                android:layout_marginTop="0dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginStart="10dp"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginRight="30dp"
+                android:layout_marginEnd="10dp"
+                />
+
+
+
+
 
         </LinearLayout>
     </ScrollView>
