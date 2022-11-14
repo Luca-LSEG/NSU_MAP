@@ -51,11 +51,12 @@ public class MainActivity extends FragmentActivity
 
 
 
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
 
 
 
@@ -73,6 +74,7 @@ public class MainActivity extends FragmentActivity
             mapFragment = MapFragment.newInstance();
             fm.beginTransaction().add(R.id.map_fragment, mapFragment).commit();
         }
+
         mapFragment.getMapAsync(this);
 
 
@@ -482,17 +484,33 @@ public class MainActivity extends FragmentActivity
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.engineering1_sheet);
 
-        Button L205 = dialog.findViewById(R.id.l205_btn);
 
-        L205.setOnClickListener(new View.OnClickListener() {
+        /**** 김점구 교수님 정보 ****/
+        Button professor01 = dialog.findViewById(R.id.rlawjarn);
+        /**** 송은지 교수님 정보 ****/
+        Button professor02 = dialog.findViewById(R.id.thddmswl);
+
+        /**** 김점구 교수님 정보 불러오기 ****/
+        professor01.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showL205();
+                dialog.cancel();
+                showprofessor01();
+            }
+        });
+
+        /**** 송은지 교수님 정보 불러오기 ****/
+        professor02.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.cancel();
+                showprofessor02();
             }
         });
 
 
 
+
         dialog.show();
         dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
@@ -501,11 +519,11 @@ public class MainActivity extends FragmentActivity
     }
 
 
-    /**** L205 시트 애니메이션 ****/
-    private void showL205() {
+    /**** 김점구 교수님 정보 시트 애니메이션 ****/
+    private void showprofessor01() {
         final Dialog dialog = new Dialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(R.layout.l205);
+        dialog.setContentView(R.layout.professor01);
 
 
         dialog.show();
@@ -515,11 +533,12 @@ public class MainActivity extends FragmentActivity
         dialog.getWindow().setGravity((Gravity.BOTTOM));
     }
 
-    /**** 공학2관 시트 애니메이션 ****/
-    private void showengineering2() {
+
+    /**** 송은자 교수님 정보 시트 애니메이션 ****/
+    private void showprofessor02() {
         final Dialog dialog = new Dialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(R.layout.engineering2_sheet);
+        dialog.setContentView(R.layout.professor02);
 
 
         dialog.show();
@@ -528,7 +547,6 @@ public class MainActivity extends FragmentActivity
         dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
         dialog.getWindow().setGravity((Gravity.BOTTOM));
     }
-
 
 
     @UiThread
@@ -592,10 +610,10 @@ public class MainActivity extends FragmentActivity
             }
         });
 
-        /**** 공학 1관 *****/
+        /**** 공학관 *****/
         Marker marker5 = new Marker();
-        marker5.setCaptionText("공학 1관");
-        marker5.setPosition(new LatLng(36.907303, 127.143542));
+        marker5.setCaptionText("공학관");
+        marker5.setPosition(new LatLng(36.907301, 127.143043));
         marker5.setMap(naverMap);
         marker5.setOnClickListener(new Overlay.OnClickListener() {
             @Override
@@ -605,18 +623,6 @@ public class MainActivity extends FragmentActivity
             }
         });
 
-        /**** 공학 2관 *****/
-        Marker marker6 = new Marker();
-        marker6.setCaptionText("공학 2관");
-        marker6.setPosition(new LatLng(36.907165, 127.142635));
-        marker6.setMap(naverMap);
-        marker6.setOnClickListener(new Overlay.OnClickListener() {
-            @Override
-            public boolean onClick(@NonNull Overlay overlay) {
-                showengineering2();
-                return false;
-            }
-        });
 
 
         /**** 네이버 지도 UI 설정 ****/
