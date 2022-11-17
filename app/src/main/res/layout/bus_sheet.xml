@@ -11,6 +11,7 @@
     app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
 
+
     <!-- 표시선 -->
     <View
         android:id="@+id/view1"

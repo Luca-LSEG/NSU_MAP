@@ -10,8 +10,12 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.ScrollView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.UiThread;
@@ -33,6 +37,9 @@ import com.naver.maps.map.util.FusedLocationSource;
 import java.util.ArrayList;
 
 
+
+
+
 /**** 네이버 객체 api 가져오기 ****/
 public class MainActivity extends FragmentActivity
         implements OnMapReadyCallback {
@@ -46,26 +53,42 @@ public class MainActivity extends FragmentActivity
     /**** 메인 버튼 이동 버튼 ****/
     Button mbtn_url;
 
-    ScrollView fill;
+    /** 검색창 구현 **/
 
-
+    AutoCompleteTextView autoCompleteTextView;
+    TextView textView;
+    String[] string = {"학복관","도서관","공학관","김점구 교수","채움"};
+    ArrayAdapter<String> adapter;
 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
-
-
-
         locationSource =
                 new FusedLocationSource(this, LOCATION_PERMiSION_REQUEST_CODE);
 
-
         ArrayList<SlideModel> imageList = new ArrayList<>();
-        
+
+
+        /** 검색창 구현 **/
+
+        autoCompleteTextView = findViewById(R.id.ac_text_view);
+        textView = findViewById(R.id.text_view);
+
+        // 검색창 어뎁터
+        adapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line,string);
+        autoCompleteTextView.setThreshold(1);
+        autoCompleteTextView.setAdapter(adapter);
+        autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
+                showfill();
+            }
+        });
+
+
+
 
         /** 지도 객체 생성 **/
         FragmentManager fm = getSupportFragmentManager();
@@ -489,6 +512,17 @@ public class MainActivity extends FragmentActivity
         Button professor01 = dialog.findViewById(R.id.rlawjarn);
         /**** 송은지 교수님 정보 ****/
         Button professor02 = dialog.findViewById(R.id.thddmswl);
+        /**** 황정희 교수님 정보 ****/
+        Button professor03 = dialog.findViewById(R.id.ghkdwjdgml);
+        /**** 김현철 교수님 정보 ****/
+        Button professor04 = dialog.findViewById(R.id.rlaguscjf);
+        /**** 나상엽 교수님 정보 ****/
+        Button professor05 = dialog.findViewById(R.id.sktkdduq);
+        /**** 정지문 교수님 정보 ****/
+        Button professor06 = dialog.findViewById(R.id.wjdwlans);
+        /**** 김정길 교수님 정보 ****/
+        Button professor07 = dialog.findViewById(R.id.rlawjdrlf);
+
 
         /**** 김점구 교수님 정보 불러오기 ****/
         professor01.setOnClickListener(new View.OnClickListener() {
@@ -507,6 +541,55 @@ public class MainActivity extends FragmentActivity
                 showprofessor02();
             }
         });
+
+        /**** 황정희 교수님 정보 불러오기 ****/
+        professor03.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.cancel();
+                showprofessor03();
+            }
+        });
+
+        /**** 김현철 교수님 정보 불러오기 ****/
+        professor04.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.cancel();
+                showprofessor04();
+            }
+        });
+
+
+        /**** 나상엽 교수님 정보 불러오기 ****/
+        professor05.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.cancel();
+                showprofessor05();
+            }
+        });
+
+
+        /**** 정지문 교수님 정보 불러오기 ****/
+        professor06.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.cancel();
+                showprofessor07();
+            }
+        });
+
+
+        /**** 김정길 교수님 정보 불러오기 ****/
+        professor07.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.cancel();
+                showprofessor07();
+            }
+        });
+
 
 
 
@@ -534,11 +617,84 @@ public class MainActivity extends FragmentActivity
     }
 
 
-    /**** 송은자 교수님 정보 시트 애니메이션 ****/
+    /**** 송은지 교수님 정보 시트 애니메이션 ****/
     private void showprofessor02() {
         final Dialog dialog = new Dialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.professor02);
+
+
+        dialog.show();
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+        dialog.getWindow().setGravity((Gravity.BOTTOM));
+    }
+
+
+    /**** 황정희 교수님 정보 시트 애니메이션 ****/
+    private void showprofessor03() {
+        final Dialog dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.professor03);
+
+
+        dialog.show();
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+        dialog.getWindow().setGravity((Gravity.BOTTOM));
+    }
+
+    /**** 김현철 교수님 정보 시트 애니메이션 ****/
+    private void showprofessor04() {
+        final Dialog dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.professor04);
+
+
+        dialog.show();
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+        dialog.getWindow().setGravity((Gravity.BOTTOM));
+    }
+
+    /**** 나상엽 교수님 정보 시트 애니메이션 ****/
+    private void showprofessor05() {
+        final Dialog dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.professor05);
+
+
+        dialog.show();
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+        dialog.getWindow().setGravity((Gravity.BOTTOM));
+    }
+
+
+    /**** 정지문 교수님 정보 시트 애니메이션 ****/
+    private void showprofessor06() {
+        final Dialog dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.professor06);
+
+
+        dialog.show();
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+        dialog.getWindow().setGravity((Gravity.BOTTOM));
+    }
+
+
+    /**** 김정길 교수님 정보 시트 애니메이션 ****/
+    private void showprofessor07() {
+        final Dialog dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.professor07);
 
 
         dialog.show();

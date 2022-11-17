@@ -21,21 +21,7 @@
         tools:layout="@layout/activity_main" />
 
 
-    <!-- 검색창 구현 -->
-    <androidx.appcompat.widget.SearchView
-        android:id="@+id/search_view"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="10dp"
-        app:iconifiedByDefault="false"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="10dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginRight="10dp"
-        android:background="@drawable/round_search"
-        android:elevation="10dp"
-        app:queryHint="장소, 건물 이름, 과목 검색" />
+
 
         <ImageView
             android:layout_width="match_parent"
@@ -51,10 +37,9 @@
             android:layout_marginLeft="358dp"
             android:background="@drawable/pl"/>
 
-
+    <include layout="@layout/search" />
     <!--bottom-sheet(메인)-->
     <include layout="@layout/bottom_sheet" />
-
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
