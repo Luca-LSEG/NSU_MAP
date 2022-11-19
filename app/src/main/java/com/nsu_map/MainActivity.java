@@ -1,5 +1,6 @@
 package com.nsu_map;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
@@ -14,15 +15,14 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ScrollView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.UiThread;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 
-import com.denzcoskun.imageslider.models.SlideModel;
 import com.naver.maps.geometry.LatLng;
 import com.naver.maps.map.LocationTrackingMode;
 import com.naver.maps.map.MapFragment;
@@ -35,14 +35,13 @@ import com.naver.maps.map.overlay.Overlay;
 import com.naver.maps.map.util.FusedLocationSource;
 
 import java.util.ArrayList;
-
-
-
+import java.util.List;
 
 
 /**** 네이버 객체 api 가져오기 ****/
 public class MainActivity extends FragmentActivity
         implements OnMapReadyCallback {
+
 
     /**** 내 위치 오버레이 ****/
     private static final int LOCATION_PERMiSION_REQUEST_CODE = 1000;
@@ -50,17 +49,20 @@ public class MainActivity extends FragmentActivity
     private NaverMap naverMap;
     private MapView mapView;
 
+
+    /**검색 **/
+    private List<String> list;
+
     /**** 메인 버튼 이동 버튼 ****/
     Button mbtn_url;
 
-    /** 검색창 구현 **/
 
-    AutoCompleteTextView autoCompleteTextView;
-    TextView textView;
-    String[] string = {"학복관","도서관","공학관","김점구 교수","채움"};
-    ArrayAdapter<String> adapter;
+    Button sebt;
+
+    EditText editText;
 
 
+    @SuppressLint("CutPasteId")
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,22 +70,24 @@ public class MainActivity extends FragmentActivity
         locationSource =
                 new FusedLocationSource(this, LOCATION_PERMiSION_REQUEST_CODE);
 
-        ArrayList<SlideModel> imageList = new ArrayList<>();
 
+        // 리스트 생성
+        list = new ArrayList<String>();
 
-        /** 검색창 구현 **/
+        //리스트에 검색될 데이터 입력
+        settingList();
 
-        autoCompleteTextView = findViewById(R.id.ac_text_view);
-        textView = findViewById(R.id.text_view);
+        final AutoCompleteTextView autoCompleteTextView = (AutoCompleteTextView)
+        findViewById(R.id.ac_text_view);
 
-        // 검색창 어뎁터
-        adapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line,string);
+        // 어뎁타 데이터 연결
         autoCompleteTextView.setThreshold(1);
-        autoCompleteTextView.setAdapter(adapter);
+        autoCompleteTextView.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line,list));
+
         autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
-                showfill();
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
             }
         });
 
@@ -99,6 +103,103 @@ public class MainActivity extends FragmentActivity
         }
 
         mapFragment.getMapAsync(this);
+
+        // 검색 확인 버튼
+        editText = findViewById(R.id.ac_text_view);
+        sebt = findViewById(R.id.searchbt);
+        sebt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (editText.getText().toString().equals("학복관")) {
+                    showwelfare();
+                }
+                else if (editText.getText().toString().equals("학생복지회관")){
+                    showwelfare();
+                }
+                else if (editText.getText().toString().equals("식당-학생복지회관")){
+                    showwelfare();
+                }
+                else if (editText.getText().toString().equals("카페-학생복지회관")){
+                    showwelfare();
+                }
+                else if (editText.getText().toString().equals("도서관")){
+                    showlibary();
+                }
+                else if (editText.getText().toString().equals("버스 정류장")){
+                    showDialog();
+                }
+                else if (editText.getText().toString().equals("공학관")){
+                    showengineering1();
+                }
+                else if (editText.getText().toString().equals("채움")){
+                    showfill();
+                }
+                else if (editText.getText().toString().equals("프린터")){
+                    showwelfare();
+                }
+                else if (editText.getText().toString().equals("편의점")){
+                    showwelfare();
+                }
+                else if (editText.getText().toString().equals("카페-도서관")){
+                    showlibary();
+                }
+                else if (editText.getText().toString().equals("atm")){
+                    showengineering1();
+                }
+                else if (editText.getText().toString().equals("식당-채움")){
+                    showfill();
+                }
+                else if (editText.getText().toString().equals("우체국")){
+                    showwelfare();
+                }
+                else if (editText.getText().toString().equals("브레댄코")){
+                    showwelfare();
+                }
+                else if (editText.getText().toString().equals("문구점")){
+                    showwelfare();
+                }
+                else if (editText.getText().toString().equals("서점")){
+                    showwelfare();
+                }
+                else if (editText.getText().toString().equals("열람실")){
+                    showlibary();
+                }
+                else if (editText.getText().toString().equals("도서 대출실")){
+                    showlibary();
+                }
+                else if (editText.getText().toString().equals("자료실")){
+                    showlibary();
+                }
+                else if (editText.getText().toString().equals("김점구 교수님")){
+                    showprofessor01();
+                }
+                else if (editText.getText().toString().equals("송은지 교수님")){
+                    showprofessor02();
+                }
+                else if (editText.getText().toString().equals("황정희 교수님")){
+                    showprofessor03();
+                }
+                else if (editText.getText().toString().equals("김현철 교수님")){
+                    showprofessor04();
+                }
+                else if (editText.getText().toString().equals("나상엽 교수님")){
+                    showprofessor05();
+                }
+                else if (editText.getText().toString().equals("정지문 교수님")){
+                    showprofessor06();
+                }
+                else if (editText.getText().toString().equals("김정길 교수님")){
+                    showprofessor07();
+                }
+                else if (editText.getText().toString().equals("사무실-컴소과")){
+                    showengineering1();
+                }
+                else if (editText.getText().toString().equals("학생회실")){
+                    showengineering1();
+                }
+
+            }
+        });
 
 
         /** 메인 메뉴 홈페이지 이동 버튼 **/
@@ -508,6 +609,55 @@ public class MainActivity extends FragmentActivity
         dialog.setContentView(R.layout.engineering1_sheet);
 
 
+        /** 교수님 연구실 스크롤 이동 **/
+        ScrollView rhdgkrrhks01 = dialog.findViewById(R.id.eng_scroll);
+        Button rhdgkrrhksbtn01 = dialog.findViewById(R.id.engin1_2);
+
+        /** 컴소과 사무실 스크롤 이동 **/
+        ScrollView rhdgkrrhks02 = dialog.findViewById(R.id.eng_scroll);
+        Button rhdgkrrhksbtn02 = dialog.findViewById(R.id.engin1_3);
+
+        /** 학생회실 스크롤 이동 **/
+        ScrollView rhdgkrrhks03 = dialog.findViewById(R.id.eng_scroll);
+        Button rhdgkrrhksbtn03 = dialog.findViewById(R.id.engin1_4);
+
+        /** ATM 스크롤 이동 **/
+        ScrollView rhdgkrrhks04 = dialog.findViewById(R.id.eng_scroll);
+        Button rhdgkrrhksbtn04 = dialog.findViewById(R.id.engin1_5);
+
+        rhdgkrrhksbtn01.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rhdgkrrhks01.smoothScrollTo(0,1100);
+
+            }
+        });
+
+        rhdgkrrhksbtn02.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rhdgkrrhks02.smoothScrollTo(0,1400);
+
+            }
+        });
+
+        rhdgkrrhksbtn03.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rhdgkrrhks03.smoothScrollTo(0,2200);
+
+            }
+        });
+
+        rhdgkrrhksbtn04.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rhdgkrrhks04.smoothScrollTo(0,2600);
+
+            }
+        });
+
+
         /**** 김점구 교수님 정보 ****/
         Button professor01 = dialog.findViewById(R.id.rlawjarn);
         /**** 송은지 교수님 정보 ****/
@@ -703,6 +853,43 @@ public class MainActivity extends FragmentActivity
         dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
         dialog.getWindow().setGravity((Gravity.BOTTOM));
     }
+
+
+    public void settingList(){
+        list.add("학복관");
+        list.add("학생복지회관");
+        list.add("식당-학생복지회관");
+        list.add("카페-학생복지회관");
+        list.add("도서관");
+        list.add("버스 정류장");
+        list.add("공학관");
+        list.add("채움");
+        list.add("프린터");
+        list.add("편의점");
+        list.add("카페-도서관");
+        list.add("atm");
+        list.add("식당-채움");
+        list.add("우체국");
+        list.add("브레덴코");
+        list.add("문구점");
+        list.add("서점");
+        list.add("열람실");
+        list.add("도서 대출실");
+        list.add("자료실");
+        list.add("김점구 교수님");
+        list.add("송은지 교수님");
+        list.add("황정희 교수님");
+        list.add("김현철 교수님");
+        list.add("나상엽 교수님");
+        list.add("정지문 교수님");
+        list.add("김정길 교수님");
+        list.add("사무실-컴소과");
+        list.add("학생회실");
+
+    }
+
+
+
 
 
     @UiThread

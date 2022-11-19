@@ -37,6 +37,7 @@
             android:layout_marginLeft="358dp"
             android:background="@drawable/pl"/>
 
+
     <include layout="@layout/search" />
     <!--bottom-sheet(메인)-->
     <include layout="@layout/bottom_sheet" />

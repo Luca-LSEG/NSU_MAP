@@ -64,7 +64,7 @@
 
     <!-- 스크롤 바 -->
     <ScrollView
-        android:id="@id/fima"
+        android:id="@+id/eng_scroll"
         android:layout_width="match_parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="100dp"
@@ -74,7 +74,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             android:orientation="vertical">
 
 
@@ -124,8 +123,41 @@
                         app:layout_constraintTop_toTopOf="@id/li1" />
 
 
+
                     <Button
                         android:id="@+id/engin1_3"
+                        android:layout_width="130dp"
+                        android:layout_height="30dp"
+                        android:textColor="@color/black"
+                        android:background="@drawable/round_button_white"
+                        android:textStyle="bold"
+                        android:textSize="17dp"
+                        android:text="📄 컴소과 사무실"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_marginTop="5dp"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:layout_marginRight="10dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:layout_marginLeft="10dp"/>
+
+                    <Button
+                        android:id="@+id/engin1_4"
+                        android:layout_width="100dp"
+                        android:layout_height="30dp"
+                        android:textColor="@color/black"
+                        android:background="@drawable/round_button_white"
+                        android:textStyle="bold"
+                        android:textSize="17dp"
+                        android:text="📄 학생회실"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_marginTop="5dp"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:layout_marginRight="10dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:layout_marginLeft="10dp"/>
+
+                    <Button
+                        android:id="@+id/engin1_5"
                         android:layout_width="90dp"
                         android:layout_height="30dp"
                         android:textColor="@color/black"
@@ -142,7 +174,7 @@
 
 
                     <Button
-                        android:id="@+id/engin1_4"
+                        android:id="@+id/engin1_6"
                         android:layout_width="90dp"
                         android:layout_height="30dp"
                         android:textColor="@color/black"

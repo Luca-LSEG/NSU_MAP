@@ -2,18 +2,53 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:padding="16dp">
-    
-    
-    <AutoCompleteTextView
+
+
+    <HorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
+        android:scrollbarSize="0dp"
+        >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:orientation="horizontal">
+    <AutoCompleteTextView
+        android:layout_width="310dp"
+        android:layout_height="wrap_content"
         android:id="@+id/ac_text_view"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        app:layout_constraintLeft_toLeftOf="parent"
         android:hint="건물 이름, 편의 시설 검색"
-        android:elevation="10dp"
+        android:elevation="5dp"
         android:padding="12dp"
         android:background="@drawable/round_search"/>
+
+    <Button
+        android:id="@+id/searchbt"
+        android:layout_width="60dp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="-5dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="5dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="0dp"
+        android:elevation="5dp"
+        android:textColor="@color/white"
+        android:layout_gravity="center"
+        android:layout_height="60dp"
+        android:background="@mipmap/ic_search" />
+
+        </LinearLayout>
+    </HorizontalScrollView>
 
     <TextView
         android:layout_width="match_parent"
